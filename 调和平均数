@@ -1,0 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	double harmonic(a, b);
+	double a, b;
+	printf("请输入两个数\n");
+	scanf("%lf,%lf", &a, &b);
+	double h=harmonic(a, b);
+	printf("这两个参数的调和平均数为%lf\n", h);
+	return 0;
+}
+double harmonic(double a, double b)
+{
+	double average = (1 / a + 1 / b) / 2;
+	return 1 / average;
+}
