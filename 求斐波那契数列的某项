@@ -1,0 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int Fibonacci(n)
+{
+    if (n == 0)
+    {
+        return 0;  
+    }
+    if (n == 1)
+    {
+        return 1;
+    }
+    else {
+        return Fibonacci(n - 1) + Fibonacci(n - 2);
+    }
+}
+int main()
+{
+    int n;
+    printf("求斐波那契数列的某项\n");
+    scanf("%d", &n);
+    int num = Fibonacci(n);
+    printf("斐波那契数列的第%d项为%d\n", n,num);
+    return 0;
+}
