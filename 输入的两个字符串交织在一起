@@ -1,0 +1,41 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+char*interposition(char arr3[], char arr4[],char arr[])
+{
+	int i = 0,n=0;
+	for (; i < 256; i++)
+	{
+		if (arr3[i] == '\0')
+		{
+			arr[n] = arr4[i];
+			n++;
+			continue;
+		}
+		if (arr4[i] == '\0')
+		{
+			arr[n] = arr3[i];
+			n++;
+			continue;
+		}
+		arr[n] = arr3[i];
+		n++;
+		arr[n] = arr4[i];
+		n++;
+	}
+	return arr;
+}
+int main()
+{
+	printf("输入的两个字符串交织在一起\n");
+	char arr1[256] = { 0 };
+	char arr2[256] = { 0 };
+	printf("请输入第一个字符串：\n");
+	gets(arr1);
+	printf("请输入第二个字符串：\n");
+	gets(arr2);
+	char arr[512] = { 0 };
+	char* c;
+	c = interposition(arr1, arr2, arr);
+	printf("%s",c);
+	return 0;
+}
